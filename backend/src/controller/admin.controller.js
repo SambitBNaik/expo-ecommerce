@@ -12,7 +12,7 @@ export async function createProduct(req, res){
         }
 
         if(!req.files || req.files.length ===0){
-            return res.status(400).json({message:"At least one image is requird"});
+            return res.status(400).json({message:"At least one image is required"});
         }
 
         if(req.files.length >3){
@@ -72,7 +72,7 @@ export async function updateProduct(req, res){
         if(stock !== undefined) product.stock = parseInt(stock);
         if(category) product.category = category;
 
-        if(req.files && files.length > 0){
+        if(req.files && req.files.length > 0){
             if(req.files.length > 3){
                 return res.status(400).json({ message:"Maximum 3 images allowed"});
             }
@@ -87,7 +87,7 @@ export async function updateProduct(req, res){
             product.images = uploadResults.map((result)=>result.secure_url);
         }
 
-        await product.await();
+        await product.save();
         res.status(200).json(product);
     } catch (error) {
         console.error("Error updating products:",error);
@@ -166,7 +166,7 @@ export async function getDashboardStats(_,res){
         
         const totalRevenue = revenueResult[0]?.total || 0;
         
-        const totalCustomers = await Users.countDocuments();
+        const totalCustomers = await User.countDocuments();
         const totalProducts = await Product.countDocuments();
 
         res.status(200).json({
