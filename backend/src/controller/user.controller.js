@@ -21,7 +21,7 @@ export async function addAddress(req, res) {
 
     // if this is set as default unset all other defaults
     if (isDefault) {
-      user.addAddress.forEach((addr) => {
+      user.addresses.forEach((addr) => {
         addr.isDefault = false;
       });
     }
@@ -58,7 +58,7 @@ export async function getAddresses(req, res){
         res.status(200).json({ addresses: user.addresses });
     } catch (error) {
         console.error("Error in getAddresses controller",error);
-        res.status(500).json({ error:"Intrnal server error"});
+        res.status(500).json({ error:"Internal server error"});
     }
 }
 
@@ -70,7 +70,7 @@ export async function updateAddress(req, res){
         const { addressId } = req.params;
         
         const user = req.user;
-        const address = user.addAddress.id(addressId);
+        const address = user.addresses.id(addressId);
         if(!address){
             return res.status(404).json({ error: "Address not found"});
         }
