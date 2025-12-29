@@ -8,6 +8,7 @@ import { inngest,functions} from "./config/inngest.js";
 
 import adminRoutes from "./routes/admin.route.js";
 import userRoutes from "./routes/user.route.js";
+import orderRoutes from "./routes/order.route.js";
 
 const app = express();
 app.use(express.json());
@@ -17,6 +18,7 @@ app.use("/api/inngest",serve({ client: inngest, functions}));
 
 app.use("/api/admin",adminRoutes);
 app.use("/api/users",userRoutes);
+app.use("/api/orders",orderRoutes);
 
 const __dirname = path.resolve();
 app.get("/api/health",(req, res)=>{
