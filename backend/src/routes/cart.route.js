@@ -8,7 +8,7 @@ router.use(protectRoute);
 
 router.get("/", getCart);
 router.post("/",addToCart);
-router.put("/:product",updateCartItem);
+router.put("/:productId",updateCartItem);
 router.delete("/:productId",removeFromCart);
 router.delete("/",clearCart);
 
