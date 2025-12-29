@@ -2,7 +2,7 @@ import { Order } from "../models/order.model.js";
 import { Product } from "../models/product.model.js";
 import { Review } from "../models/review.model.js";
 
-export async function crateOrder(req, res){
+export async function createOrder(req, res){
     try {
         const user = req.user;
         const { orderItems, shippingAddress, paymentResult, totalPrice} = req.body;
@@ -68,7 +68,7 @@ export async function getUserOrders(req, res){
 
         res.status(200).json({ orders: orderWithReviewStatus });
     } catch (error) {
-        console.error("Error in getUser controller:", error);
+        console.error("Error in getUserOrders controller:", error);
         res.status(500).json({ error:"Internal server error"});
     }
 }
