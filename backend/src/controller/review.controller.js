@@ -50,7 +50,7 @@ export async function createReview(req, res){
                 averageRating: totalRating / reviews.length,
                 totalReviews: reviews.length,
             },
-            { new: true, runValidator:true }
+            { new: true, runValidators :true }
         );
 
         if(!updatedProduct){
@@ -81,7 +81,7 @@ export async function deleteReview(req, res){
         }
 
         const productId = review.productId;
-        await Review.findByIdAndUpdate(reviewId);
+        await Review.findByIdAndDelete(reviewId);
 
         const reviews = await Review.find({ productId });
         const totalRating = reviews.reduce((sum, rev)=> sum + rev.rating,0);
