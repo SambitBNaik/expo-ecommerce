@@ -240,7 +240,7 @@ const ProductPage = () => {
                   <span>Category</span>
                 </label>
                 <select
-                  className="select selec-bordered"
+                  className="select select-bordered"
                   value={formData.category}
                   onChange={(e)=>setFormData({...formData, category:e.target.value})}
                   required
@@ -266,6 +266,7 @@ const ProductPage = () => {
                   className='input input-bordered'
                   value={formData.price}
                   onChange={(e)=>setFormData({...formData,price:e.target.value})}
+                  required
                 />
               </div>
 
@@ -291,13 +292,13 @@ const ProductPage = () => {
               <textarea
                 className="textarea textarea-bordered h-24 w-full"
                 placeholder="Enter product description"
-                value={formData.value}
+                value={formData.description}
                 onChange={(e)=>setFormData({...formData, description:e.target.value})}
                 required
                />
             </div>
 
-            <div className='form-controller'>
+            <div className='form-control'>
               <label className='label'>
                 <span className='label-text font-semibold text-base flex items-center gap-2'>
                   <ImageIcon className='h-5 w-5'/>
@@ -311,7 +312,7 @@ const ProductPage = () => {
                  accept='image/*'
                  multiple
                  onChange={handleImageChange}
-                 className="file-input file-input-borderd file-input-primary w-full"
+                 className="file-input file-input-bordered file-input-primary w-full"
                  required={!editingProduct}
                 />
                 { editingProduct &&(
