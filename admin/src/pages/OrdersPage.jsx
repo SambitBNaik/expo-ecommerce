@@ -41,13 +41,12 @@ const OrdersPage = () => {
               <span className="loading loading-spinner loading-lg"/>
             </div>
           ): 
-          // orders.length === 0 ?(
-          //   <div className="text-center py-12 text-base-content/60">
-          //     <p className="text-xl font-semibold mb-2">No orders yet</p>
-          //     <p className="text-sm">Orders will appear here once customers make purchase</p>
-          //   </div>
-          // )
-          (
+          orders.length === 0 ?(
+            <div className="text-center py-12 text-base-content/60">
+              <p className="text-xl font-semibold mb-2">No orders yet</p>
+              <p className="text-sm">Orders will appear here once customers make purchase</p>
+            </div>
+          ):(
             <div className="overflow-x-auto">
               <table className="table">
                 <thead>
