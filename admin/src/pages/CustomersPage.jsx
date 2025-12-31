@@ -16,7 +16,7 @@ const CustomersPage = () => {
       <div>
         <h1 className="text-2xl font-semibold">Customers</h1>
         <p className="text-base-content/70 mt-1">
-           { customers.length} { customers.length === 1 ? "customers" : "customers"} registered
+           { customers.length} { customers.length === 1 ? "customer" : "customers"} registered
         </p>
       </div>
 
@@ -42,7 +42,7 @@ const CustomersPage = () => {
                     <th>Customer</th>
                     <th>Email</th>
                     <th>Address</th>
-                    <th>Whislist</th>
+                    <th>Wishlist</th>
                     <th>Joined Date</th>
                   </tr>
                 </thead>
@@ -55,7 +55,7 @@ const CustomersPage = () => {
                           <div className="bg-primary text-primary-content rounded-full w-12">
                             <img
                               src={customer.imageUrl}
-                              alr={customer.name}
+                              alt={customer.name}
                               className="w-12 h-12 rounded-full" 
                             />
                           </div>
