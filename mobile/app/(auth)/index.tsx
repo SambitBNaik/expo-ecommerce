@@ -27,7 +27,7 @@ const AuthScreen = () => {
           style={{
             shadowOffset: { width: 0, height: 1 },
             shadowOpacity: 0.1,
-            elevation: 2, // this is for andriod
+            elevation: 2, // this is for android
           }}
         >
           {loadingStrategy === "oauth_google" ? (
@@ -73,7 +73,7 @@ const AuthScreen = () => {
       </View>
 
       <Text className="text-center text-gray-500 text-xs leading-4 mt-6 px-2">
-        By signing up, you agree to our <Text className="text-blur-500">Terms</Text>
+        By signing up, you agree to our <Text className="text-blue-500">Terms</Text>
         {", "}
         <Text className="text-blue-500">Privacy Policy</Text>
         {", and "}
