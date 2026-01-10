@@ -2,7 +2,7 @@ export const captializeFirstLetter = (text: string)=>{
     return text.charAt(0).toUpperCase() + text.slice(1); 
 };
 
-export const formtDate = (dateString: string) => {
+export const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("en-US",{ month: "short", day:"numeric", year: "numeric" });
 };
